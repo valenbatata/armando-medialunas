@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
+//Ruta padre -> módulo raíz
 import { AppRoutingModule } from './app-routing.module';
+//Archivo componente GENERAL
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//Componentes GLOBALES
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modules/shared/shared.module';
+
+
+//import de las herramientas de la base de datos
+import { enviroment } from 'src/enviroment/enviroment'; //Vincula BD con la app
+import{ AngularFireModule } from '@angular/fire/compat'; //Trabaja con las colecciones de información
+import{ AngularFireAuthModule } from '@angular/fire/compat/auth'; //Trabaja con la autentificación
+import{ AngularFireStorageModule } from '@angular/fire/compat/storage' //Trabaja con imagenes y archivos
+
+
+
 
 @NgModule({
   declarations: [
@@ -16,7 +28,14 @@ import { SharedModule } from './modules/shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
+    //vincula con Firebase
+    AngularFireModule.initializeApp(enviroment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
