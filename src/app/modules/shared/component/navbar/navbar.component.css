@@ -1,4 +1,31 @@
-img{
-    width: 2%;
-    float: right;
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+/*corresponden a pantallas más pequeñas -> ej: celulares */
+@media(min-width: 300px) and (max-width: 700px){
+    mat-toolbar{
+        background-color: green;
+    }
+
+    #menuInicio{
+        display: none;
+    }
+
+    #menuProducto{
+        display: none;
+    }
+}
+
+/*Encapsula estilos para pantallas más grandes -> ej: computadora, televisor, celular, etc*/
+@media (min-width:700px){
+    mat-toolbar{
+        background-color:  rgb(233, 233, 18);
+    }
+
+   
+
+    #menuSecciones{
+        display: none;
+    }
 }

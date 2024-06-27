@@ -1,1 +1,66 @@
-<p>registro works!</p>
+<div class="conteiner">
+    <div class="row">
+       
+         <h1>Registrate</h1>
+        <i class="material-icons" style="font-size: 200px;">person</i>
+
+
+        <!--Nombre de usuario-->
+
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese su nombre </mat-label>
+            <input [(ngModel)]="usuario.nombre" matInput placeholder="ejemplo: Martín" required>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+        </mat-form-field>
+
+
+        <!--Apellido del usuario-->
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese su Apellido</mat-label>
+            <input [(ngModel)]="usuario.apellido" matInput placeholder="ejemplo: Gonzales" required>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+        </mat-form-field>
+
+        <!--gmail del usuario-->
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese su Gmail</mat-label>
+            <input [(ngModel)]="usuario.gmail" matInput placeholder="ejemplo: martinitoelmotherfockergonzales2024@gmail.com" required>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+
+        <!--ingrese password-->
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input [(ngModel)]="usuario.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint align="start"> minimo: 6/{{input.value.length}}</mat-hint>
+        </mat-form-field>
+
+        <!--ROL DE USUARIO-->
+
+        <mat-form-field>
+            <mat-label>Seleccione rol de usuario</mat-label>
+            <select [(ngModel)]="usuario.rol" matNativeControl required>
+                <option value="admin">Administrador</option>
+                <option value="vist">Visitante</option>
+                
+            </select>
+        </mat-form-field>
+
+
+        <!--Boton para enviar la info a la base de datos-->
+        <button class="boton" mat-raised-button color="primary" (click)="registrar()">Registrarme</button>
+
+    </div>
+
+
+
+
+    </div>
+

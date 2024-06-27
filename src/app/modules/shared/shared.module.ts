@@ -11,6 +11,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 
+//imports de menú
+import {MatMenuModule} from '@angular/material/menu';
+
+
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -21,7 +26,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppRoutingModule,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule
   ],
 
   exports:[
@@ -29,7 +35,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     NavbarComponent,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule
   ]
 })
 export class SharedModule { }

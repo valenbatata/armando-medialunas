@@ -1,0 +1,11 @@
+.conteiner{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    
+} 
+.boton{
+    width: 120px;
+    margin: auto;
+}
