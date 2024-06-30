@@ -56,7 +56,7 @@ export class RegistroComponent {
 
    //El metodo CATCH captura una falla u la vuelve un error
    .catch(error=>{
-     alert("Hubo un problema al registrar un nuevo usuario:(\n"+error)
+     alert("Hubo un problema al registrar un nuevo usuario (\n"+error)
    })
     
    
