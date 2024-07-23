@@ -8,19 +8,12 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 //ANGULAR imports
 import {MatGridListModule} from '@angular/material/grid-list';
 //ANGULAR card
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import { Component} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
 
-export interface Tile {
-
-}
-
 @NgModule({
-  
- 
-
   declarations: [
     InicioComponent
    
@@ -29,11 +22,14 @@ export interface Tile {
     CommonModule,
     InicioRoutingModule,
    //angular
-    MatGridListModule, 
-    Component,
+    MatGridListModule,
     MatButtonModule,
     MatCardModule
-  
+  ],
+  exports:[
+    MatGridListModule,
+    MatButtonModule,
+    MatCardModule
   ]
 })
 

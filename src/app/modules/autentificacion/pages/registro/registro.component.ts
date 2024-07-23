@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 import { Usuario } from 'src/app/models/usuario';
 
+import * as CryptoJS from "crypto-js";
+
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -83,6 +86,7 @@ export class RegistroComponent {
      this.limpiarInputs()
 
    }
+
    limpiarInputs(){
      const inputs ={
        uid: this.usuario.uid = '',
@@ -93,6 +97,7 @@ export class RegistroComponent {
        password:this.usuario.password = ''
      }
    }
+   
  }
 
 

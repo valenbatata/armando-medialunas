@@ -38,8 +38,9 @@
   <!--Inicio de sesión y registro de nuevo usuario-->
   <button  mat-button [matMenuTriggerFor]="usuario"><mat-icon style="color: black;">person</mat-icon></button>
   <mat-menu #usuario="matMenu">
-    <button mat-menu-item routerLink="/registro">Registrarse</button>
-    <button mat-menu-item routerLink="/inicio-sesion">Iniciar Sesión</button>
+    <button mat-menu-item (click)="inicio()"  ngIf="logeado" routerLink="/registro">Registrarse</button>
+    <button mat-menu-item (click)="inicio()" ngIf="logeado" routerLink="/inicio-sesion">Iniciar Sesión</button>
+    <button mat-menu-item (click)="inicio()" ngIf="deslogeado">Cerrar Sesion</button>
 
   </mat-menu>
 
