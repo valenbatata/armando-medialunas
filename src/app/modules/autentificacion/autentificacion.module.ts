@@ -9,24 +9,24 @@ import { RegistroComponent } from './pages/registro/registro.component';
 //archivo de rutas hijas
 import { AutentificacionRoutingModule } from './autentificacion-routing.module';
 //componentes de material
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 //componentes de Angular
 import { FormsModule } from '@angular/forms';
 
 //select angular
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
   declarations: [
-  InicioSesionComponent,
-  RegistroComponent,
-  
-   
+    InicioSesionComponent,
+    RegistroComponent,
+
+
   ],
   imports: [
     CommonModule,
@@ -37,9 +37,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     FormsModule,
     MatSelectModule
-    
+
   ],
-  exports:[
+  exports: [
     InicioSesionComponent,
     RegistroComponent,
     MatIconModule,

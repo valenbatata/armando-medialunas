@@ -21,6 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
     FooterComponent,
     NavbarComponent
   ],
+  
   imports: [
     CommonModule,
     AppRoutingModule,

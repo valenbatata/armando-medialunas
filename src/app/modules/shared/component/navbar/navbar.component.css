@@ -5,7 +5,7 @@
 /*corresponden a pantallas más pequeñas -> ej: celulares */
 @media(min-width: 300px) and (max-width: 700px){
     mat-toolbar{
-        background-color: #F8B227;
+        background-color: #000000;
     }
   
     img{
@@ -23,7 +23,7 @@
 /*Encapsula estilos para pantallas más grandes -> ej: computadora, televisor, celular, etc*/
 @media (min-width:700px){
     mat-toolbar{
-        background-color:  #F8B227;
+        background-color:  #000000;
     }
 
     img{

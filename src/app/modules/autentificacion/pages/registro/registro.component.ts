@@ -62,6 +62,22 @@ export class RegistroComponent {
      alert("Hubo un problema al registrar un nuevo usuario (\n"+error)
    })
     
+
+     //Constante UID captura el identificador de la BD
+     const uid=await this.ServicioAuth.obtenerUid()
+     //Se le asigna al atributo de la interfaz esta constante
+     this.usuario.uid=uid
+
+     /*
+     SHA-256: Es un algoritmo de hash seguro que toma una entrada (en este caso la contraseña)
+     y produce una cadena de caracteres HEXADECIMAL que va a representar a su hash
+     toString: Convierte el resultado en la cadena de caracteres legible */
+      this.usuario.password= CryptoJS.SHA256(this.usuario.password).toString();
+      
+     //Llamamos a la función guardarusuario()
+     this.guardarusuario()
+     //Llamamos a la función limpiarInputs()
+     this.limpiarInputs()
    
   
 
@@ -76,14 +92,6 @@ export class RegistroComponent {
      .catch(err=>{
        console.log('Error =>',err);
      })
-     //Constante UID captura el identificador de la BD
-     const uid=await this.ServicioAuth.obtenerUid()
-     //Se le asigna al atributo de la interfaz esta constante
-     this.usuario.uid=uid
-     //Llamamos a la función guardarusuario()
-     this.guardarusuario()
-     //Llamamos a la función limpiarInputs()
-     this.limpiarInputs()
 
    }
 

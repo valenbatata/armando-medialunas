@@ -9,21 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
- logeado=true //booleana para manejar el registro y el inicio sesión
-  deslogeado=false //booleana para manejar el cerrar sesión
-constructor(
-  public servicioAuth:AuthService,
-public servicioRutas:Router
-){}
+  logeado = true //booleana para manejar el registro y el inicio sesión
+  deslogeado = false //booleana para manejar el cerrar sesión
+  constructor(
+    public servicioAuth: AuthService,
+    public servicioRutas: Router
+  ) { }
 
-inicio(){
-  this.logeado=false
-  this.deslogeado=true
-}
-cerrarSesion(){
-  this.deslogeado=false
-  this.logeado=true
-  this.servicioAuth.CerrarSesion
-  this.servicioRutas.navigate(['/'])
-}
+  inicio() {
+    this.logeado = false
+    this.deslogeado = true
+  }
+  cerrarSesion() {
+    this.deslogeado = false
+    this.logeado = true
+    this.servicioAuth.CerrarSesion
+    this.servicioRutas.navigate(['/'])
+  }
 }

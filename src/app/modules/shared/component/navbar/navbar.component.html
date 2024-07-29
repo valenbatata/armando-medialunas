@@ -17,7 +17,7 @@
   
    <!--Se van a mostrar cuando la pantalla sea mayor a 700px-->
   <!--Botón para la vista de inicio-->
-  <button id="menuInicio" mat-button routerLink="/inicio"><img src="../../../../../assets/Armando MEDIALUNAS logo negro.png" alt="" style="width: 14%;"></button>
+  <button id="menuInicio" mat-button routerLink="/inicio"><img src="../../../../../assets/y2k logo menu.png" alt="" style="width: 14%;"></button>
 
 
   <!--MENÚ DE ANGULR DESPLEGABLE--> <!--productos
@@ -36,8 +36,8 @@
   <!--BOTONES CON ICONO-->
   <span class="example-spacer"></span>
   <!--Inicio de sesión y registro de nuevo usuario-->
-  <button  mat-button [matMenuTriggerFor]="usuario"><mat-icon style="color: black;">person</mat-icon></button>
-  <mat-menu #usuario="matMenu">
+  <button  mat-button [matMenuTriggerFor]="usuario"><mat-icon style="color: whitesmoke;">person</mat-icon></button>
+<mat-menu #usuario="matMenu">
     <button mat-menu-item (click)="inicio()"  ngIf="logeado" routerLink="/registro">Registrarse</button>
     <button mat-menu-item (click)="inicio()" ngIf="logeado" routerLink="/inicio-sesion">Iniciar Sesión</button>
     <button mat-menu-item (click)="inicio()" ngIf="deslogeado">Cerrar Sesion</button>
@@ -46,7 +46,7 @@
 
   <!--icono-->
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon style="color: black;"><span class="material-symbols-outlined">
+    <mat-icon style="color: whitesmoke;"><span class="material-symbols-outlined">
       shopping_cart
       </span></mat-icon>
   </button>

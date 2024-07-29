@@ -6,27 +6,29 @@ import { InicioRoutingModule } from './inicio-routing.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
 
 //ANGULAR imports
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 //ANGULAR card
-import { Component} from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
-    InicioComponent
-   
+    Component,
+    InicioComponent,
+
   ],
   imports: [
     CommonModule,
     InicioRoutingModule,
-   //angular
+    //angular
     MatGridListModule,
     MatButtonModule,
     MatCardModule
   ],
-  exports:[
+  exports: [
+    InicioComponent,
     MatGridListModule,
     MatButtonModule,
     MatCardModule
@@ -35,6 +37,6 @@ import {MatCardModule} from '@angular/material/card';
 
 
 
-export class InicioModule { 
+export class InicioModule {
 
 }
