@@ -10,14 +10,14 @@
 
   <mat-menu #seccion="matMenu">
     <button  mat-button routerLink="/inicio" > </button>
-   <!-- <button  mat-button [matMenuTriggerFor]="producto">Productos</button>-->
+   <!--< <button  mat-button [matMenuTriggerFor]="producto">Productos</button>-->
   </mat-menu>
 
 
   
    <!--Se van a mostrar cuando la pantalla sea mayor a 700px-->
   <!--Botón para la vista de inicio-->
-  <button id="menuInicio" mat-button routerLink="/inicio"><img src="../../../../../assets/y2k logo menu.png" alt="" style="width: 14%;"></button>
+  <button id="menuInicio" mat-button routerLink="/inicio"><img src="../../../../../assets/y2k-logo-menu.png" alt="" style="width: 14%;"></button>
 
 
   <!--MENÚ DE ANGULR DESPLEGABLE--> <!--productos
@@ -38,9 +38,9 @@
   <!--Inicio de sesión y registro de nuevo usuario-->
   <button  mat-button [matMenuTriggerFor]="usuario"><mat-icon style="color: whitesmoke;">person</mat-icon></button>
 <mat-menu #usuario="matMenu">
-    <button mat-menu-item (click)="inicio()"  ngIf="logeado" routerLink="/registro">Registrarse</button>
-    <button mat-menu-item (click)="inicio()" ngIf="logeado" routerLink="/inicio-sesion">Iniciar Sesión</button>
-    <button mat-menu-item (click)="inicio()" ngIf="deslogeado">Cerrar Sesion</button>
+    <button mat-menu-item (click)="inicio()"  *ngIf="logeado" routerLink="/registro">Registrarse</button>
+    <button mat-menu-item (click)="inicio()" *ngIf="logeado" routerLink="/inicio-sesion">Iniciar Sesión</button>
+    <button mat-menu-item (click)="inicio()" *ngIf="deslogeado">Cerrar Sesion</button>
 
   </mat-menu>
 

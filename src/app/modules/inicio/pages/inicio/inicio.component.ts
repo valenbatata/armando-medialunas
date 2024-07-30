@@ -7,7 +7,7 @@ import { Card } from 'src/app/models/card';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
- 
+ /*
   //Propiedad pública (tipo array)
   public promo: Card[]
 
@@ -29,5 +29,5 @@ export class InicioComponent {
         alt: 'promito 3'
       }
     ]
-  }
+  }*/
 }

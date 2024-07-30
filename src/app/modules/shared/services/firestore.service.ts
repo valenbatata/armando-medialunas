@@ -29,7 +29,10 @@ export class FirestoreService {
     Reject: promesa rechazada -> ocurrio una falla 
      */
     return new Promise(async (resolve, reject) => {
-
+     
+      /* Const resultado = colección de usuarios, envia como número de documento en el uid 
+      y setea la información que ingresamos en el formulario registro */
+      
       //bloque TRY encapsula la logica suelta 
       try {
         usuario.uid = id
@@ -44,9 +47,7 @@ export class FirestoreService {
 
 
 
-      /*
-      Const resultado = colección de usuarios, envia como número de documento en el uid 
-      y setea la información que ingresamos en el formulario registro */
+     
 
       
       }
