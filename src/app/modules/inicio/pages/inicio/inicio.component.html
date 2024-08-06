@@ -1,20 +1,18 @@
 <div class="conteiner">
   <header>
-      <img id="header" src="../../../../../assets/melanies-1.png" alt="">
+    <img id="header" src="../../../../../assets/inicio/banner y2k (1).png" alt="">
   </header>
 
-  <body id="background1">
-      
-  </body>
-</div>
-<!--CARD 1
-    <div class="tarjetas" *ngFor="let i of promo">
-      <div class="card" style="width: 15%;">
-        <img src="../../../../../assets/{{i.img}}" class="card-img-top" alt="...">
+
+  <body>
+    <!-- CARD 1 -->
+    <div class="card-container">
+      <div class="card" *ngFor="let destacado of destacados" style="width: 18rem;">
+        <img src="{{destacado.img}}" class="card-img-top" alt="">
         <div class="card-body">
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
-  
-  -->
-
+  </body>
+</div>

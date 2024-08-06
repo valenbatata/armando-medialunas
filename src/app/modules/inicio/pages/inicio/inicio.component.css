@@ -1,5 +1,60 @@
+
+
 #header{
-    width: 85.4rem;
-    height: 25rem;    
+    width: 84.3rem;
+    height: 28rem;    
 }
+
+.conteiner{
+    height: 100%; /* Asegura que el fondo cubra todo el contenido de la página */
+    margin: 0;
+    padding: 0;
+
+
+}
+body{
+    background-image: url("../../../../../assets/inicio/melanies2.png"); 
+    background-size: cover; /* Asegura que la imagen cubra toda la página */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+   
+}
+.card-container{
+    display: flex; /* Usa Flexbox para alinear las tarjetas horizontalmente */
+    justify-content: center; /* Centrar horizontalmente las tarjetas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px; /* Padding alrededor del contenedor */
+    
+}
+
+.card {
+    width: 18rem; /* Tamaño fijo para cada tarjeta */
+    border: 2px solid #f8ffb7; /* Borde ligero para las tarjetas */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para mejorar el diseño */
+  }
+  .card-img-top {
+    width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
+  }
+
+  .card-body {
+    padding: 10px; /* Espacio interno de la tarjeta */
+    text-align: center; /* Centrar el texto dentro de la tarjeta */
+  }
+
+  .btn-primary {
+    display: inline-block; /* Permitir que el botón se alinee correctamente */
+    padding: 8px 16px; /* Padding del botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+  }
+  .btn-primary:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el ratón */
+  }
+
 

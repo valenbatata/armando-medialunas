@@ -30,10 +30,11 @@ import{ AngularFireStorageModule } from '@angular/fire/compat/storage' //Trabaja
     SharedModule,
     BrowserAnimationsModule,
     
+    
     //vincula con Firebase
     AngularFireModule.initializeApp(enviroment.firebaseConfig), //inicializar Firebase dentro del proyecto
     AngularFireAuthModule,
-    AngularFireStorageModule,
+    AngularFireStorageModule
     
 
   ],

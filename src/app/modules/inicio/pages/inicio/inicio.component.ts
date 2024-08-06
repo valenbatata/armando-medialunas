@@ -7,27 +7,27 @@ import { Card } from 'src/app/models/card';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
- /*
+ 
   //Propiedad pública (tipo array)
-  public promo: Card[]
+  public destacados: Card[]
 
   constructor(){
-    this.promo = [
+    this.destacados = [
       {
-        uid: 'promo1',
-        img: '../../../../../assets/promo1.jpeg',
-        alt: 'promito 1'
+        uid:'',
+        img: '../assets/cards-inicio/card1.jpg',
+        alt: ''
       },
       {
-        uid: 'promo2',
-        img: '../../../../../assets/promo2.jpeg',
-        alt: 'promito 2'
+        uid: '',
+        img: '../assets/cards-inicio/card2.jpg',
+        alt: ''
       },
       {
-        uid: 'promo3',
-        img: '../../../../../assets/promo3.jpeg',
-        alt: 'promito 3'
+        uid: '',
+        img: '../assets/cards-inicio/card3.jpg',
+        alt: ''
       }
     ]
-  }*/
+ }
 }

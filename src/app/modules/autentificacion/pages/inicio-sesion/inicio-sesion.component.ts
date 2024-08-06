@@ -6,11 +6,14 @@ import { AuthService } from '../../services/auth.service';
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 
 //Componentes rutas Angular
-import { Router } from '@angular/router'
-import * as CryptoJS from "crypto-js";
+import { Router } from '@angular/router';
+
+import * as CryptoJS from 'crypto-js';
+
 import { Usuario } from 'src/app/models/usuario';
 
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-inicio-sesion',
   templateUrl: './inicio-sesion.component.html',
@@ -46,40 +49,69 @@ export class InicioSesionComponent {
     try {
       //obtenemos usuario de la BD
       const usuarioBD = await this.ServicioAuth.obtenerUsuario(credenciales.gmail)
-
-      //Condicional verifica que en la base de datos el usuario existiera o que sea igual al de nuestra coleccion
+      // Condicional verificada que ese usuario de la BD existiera o que sea igual al de nuestra colección
       if (!usuarioBD || usuarioBD.empty) {
         Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Algo salió mal!",
-          footer: '<a href="#">¿Por qué tuve este problema?</a>'
+          title: "¡Oh no!",
+          text: "Correo electrónico no registrado",
+          icon: "error"
         });
-        this.limpiarInputs()
+
+        this.limpiarInputs();
         return;
       }
-
       //vincula al primerdocumento de la coleccion "usuarios" que se obtenía desde la BD
-      const usuarioDoc = usuarioBD.docs[0]
+      const usuarioDoc = usuarioBD.docs[0];
+
 
       //Se extrae los datos del documento en forma de objeto y se especifica que va a ser del tipo usuario
       //Se refiere a la interfaz usuario de nuestros modelos
-      const usuarioData = usuarioDoc.data() as Usuario
+      const usuarioData = usuarioDoc.data() as Usuario;
 
       //Encriptar la contraseña que el usuario envia mediante "iniciar sesion"
       const hashedPassword = CryptoJS.SHA256(credenciales.password).toString()
 
       //Condicional que compara la contraseña que acabamos de encriptar y que el usuario
       //Envio con la que recivimos de "usuarioData"
-
       if (hashedPassword !== usuarioData.password) {
-        alert("contraseña incorrecta");
-        this.usuarios.password = ""
+        Swal.fire({
+          title: "¡Oh no!",
+          text: "Contraseña incorrecta",
+          icon: "error"
+        });
+
+        this.usuarios.password = '';
         return;
+
       }
 
-    } catch { } { }
 
+      const res = await this.ServicioAuth.InicioSesion(credenciales.gmail, credenciales.password)
+        .then(res => {
+          Swal.fire({
+            title: "¡Buen trabajo!",
+            text: "¡Se pudo ingresar con éxito :)!",
+            icon: "success"
+          });
+
+          this.ServicioRutas.navigate(['/inicio']);
+        })
+
+        .catch(err => {
+          Swal.fire({
+            title: "¡Oh no!",
+            text: "Hubo un problema al iniciar sesión :( " + err,
+            icon: "error"
+          });
+
+          this.limpiarInputs();
+        })
+
+
+
+    } catch (error) {
+      this.limpiarInputs();
+    }
   }
 
   limpiarInputs() {
@@ -93,4 +125,5 @@ export class InicioSesionComponent {
     }
   }
 }
+
 

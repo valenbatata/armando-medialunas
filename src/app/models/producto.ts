@@ -1,7 +1,7 @@
 export interface Producto {
     idProducto:string |any,
     nombre:string,
-    precio:string,
+    precio:number,
     descripcion:string,
     imagen:string,
     alt:string,
