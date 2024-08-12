@@ -12,6 +12,9 @@ import { Validators } from '@angular/forms';
 export class TableComponent {
   //Creamos coleccion local de producto -> la definimos como array
   coleccionProductos: Producto[] = []
+  productoSeleccionado!: Producto; // ! <- toma valores vacios
+  modalVisibleProducto: boolean = false;
+
 
   //definimos formulario para los prductos 
   /*
@@ -29,10 +32,12 @@ export class TableComponent {
   constructor(public servicioCrud: CrudService) { }
 
   ngOnInit(): void {
-    this.servicioCrud.obtenerProductos().subscribe(producto=> {
-      this.coleccionProductos=producto
+    this.servicioCrud.obtenerProductos().subscribe(producto => {
+      this.coleccionProductos = producto
     })
-   }
+  }
+
+
   async agregarProducto() {
     if (this.producto.valid) {
       let nuevoProducto: Producto = {
@@ -40,7 +45,7 @@ export class TableComponent {
         nombre: this.producto.value.nombre!,
         precio: this.producto.value.precio!,
         imagen: this.producto.value.imagen!,
-        alt:this.producto.value.alt!,
+        alt: this.producto.value.alt!,
         descripcion: this.producto.value.descripcion!,
         categoria: this.producto.value.categoria!
 
@@ -55,4 +60,23 @@ export class TableComponent {
         })
     }
   }
-}
+
+
+
+  // función vinculada al modal y el botón de la tabla
+  mostrarBorrar(productoSeleccionado: Producto) {
+    this.modalVisibleProducto = true;
+    this.productoSeleccionado = productoSeleccionado;
+  }
+
+  borrarProductos() {
+    this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
+    .then(respuesta=>{
+      alert("se ha podido eliminar con éxito")
+    })
+    .catch(error => {
+      alert("Ha ocurrido un error al eliminar el producto"+error)
+    })      
+    }
+  }
+

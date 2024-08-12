@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Action } from 'rxjs/internal/scheduler/Action';
 import { map } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class CrudService {
   constructor(private dataBase: AngularFirestore) {
     this.productoCollection = dataBase.collection('producto')
   }
+
   //Crea nuevos productos
   crearProducto(producto: Producto) {
     return new Promise(async (resolve, reject) => {
@@ -29,17 +31,42 @@ export class CrudService {
 
     })
   }
-  //Edita productos
-  //Elimina productos
 
 
-  //Obtiene productos
   /*
-  * snapshot => toma una captura del estado de los datos
-  * pipe => tuberias que retornan un nuevo arreglo
-  * a => resguarda la nueva información y la envia como un nuevo documento 
+  
+  Obtiene productos
+
+   SNAPSHOT => toma una captura del estado de los datos
+   PIPE => tuberias que retornan un nuevo arreglo
+   A => resguarda la nueva información y la envia como un nuevo documento 
+
    */
   obtenerProductos() {
     return this.productoCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
   }
+
+  //Elimina productos
+  eliminarProducto(idProducto: string) {
+    return new Promise((resolve, reject) => {
+      try {
+        const respuesta = this.productoCollection.doc(idProducto).delete()
+        resolve(respuesta)
+      } catch (error) {
+        reject(error)
+      }
+    })
+  }
+
+    //Edita productos
+    /*
+
+    Accedemos a la colección "productos" de la base de datos, buscamos el ID del producto
+    seleccionado y lo actualizamos con el medotodo "update" enviando la nueva información
+      
+    */
+    editarProducto(idProducto:string, nuevaData:Producto){
+      return this.dataBase.collection('productos').doc(idProducto).update(nuevaData)
+    }
+
 }

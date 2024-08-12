@@ -1,7 +1,10 @@
-
+@font-face {
+  font-family: Lostar;
+  src: url('/src/assets/font/lostar/Lostar.ttf');
+}
 
 #header{
-    width: 84.3rem;
+    width: 100%;
     height: 28rem;    
 }
 
@@ -12,6 +15,7 @@
 
 
 }
+
 body{
     background-image: url("../../../../../assets/inicio/melanies2.png"); 
     background-size: cover; /* Asegura que la imagen cubra toda la página */
@@ -19,6 +23,13 @@ body{
     background-repeat: no-repeat; /* Evita que la imagen se repita */
    
 }
+
+/* Titulo uno*/
+
+
+
+
+  /*Card*/
 .card-container{
     display: flex; /* Usa Flexbox para alinear las tarjetas horizontalmente */
     justify-content: center; /* Centrar horizontalmente las tarjetas */
@@ -28,33 +39,38 @@ body{
 }
 
 .card {
+    margin-top: 20%;
     width: 18rem; /* Tamaño fijo para cada tarjeta */
-    border: 2px solid #f8ffb7; /* Borde ligero para las tarjetas */
+    border: 2px solid #6a3ada96; /* Borde ligero para las tarjetas */
     border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para mejorar el diseño */
+    box-shadow: 0 2px 4px #6a3ada96; /* Sombra ligera para mejorar el diseño */
   }
   .card-img-top {
     width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
     height: auto; /* Mantener la proporción de la imagen */
-    border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
+ 
   }
 
   .card-body {
     padding: 10px; /* Espacio interno de la tarjeta */
-    text-align: center; /* Centrar el texto dentro de la tarjeta */
+   
+  }
+/*BOTON DE LAS CARDS*/
+  .btn {
+    padding: 8px 16px; /* Padding del botón */
+    background-color: #6a3ada96; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: 0.3s ease; /* Transición suave al pasar el ratón */
   }
 
-  .btn-primary {
-    display: inline-block; /* Permitir que el botón se alinee correctamente */
-    padding: 8px 16px; /* Padding del botón */
-    background-color: #007bff; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 4px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+  .btn:hover {
+    background-color: #ad00b3; /* Cambio de color al pasar el ratón */
   }
-  .btn-primary:hover {
-    background-color: #0056b3; /* Cambio de color al pasar el ratón */
+ 
+  h2{
+    font-family: Lostar;
   }
+  
 
 
