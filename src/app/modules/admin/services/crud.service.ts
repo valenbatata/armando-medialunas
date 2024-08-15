@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Action } from 'rxjs/internal/scheduler/Action';
 import { map } from 'rxjs';
-import { Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +22,12 @@ export class CrudService {
         //Creamos un número identificativo para el producto en la base de datos
         const idProducto = this.dataBase.createId()
         //Asignamos ID creado al atributo idProducto de la interfaz Producto
-        producto.idProducto
+        producto.idProducto = idProducto
 
         const resultado = await this.productoCollection.doc(idProducto).set(producto)
-      } catch (error) { reject(error) }
+        resolve(resultado)
+      } catch (error) 
+       { reject(error) }
 
     })
   }
@@ -66,7 +66,7 @@ export class CrudService {
       
     */
     editarProducto(idProducto:string, nuevaData:Producto){
-      return this.dataBase.collection('productos').doc(idProducto).update(nuevaData)
+      return this.dataBase.collection('producto').doc(idProducto).update(nuevaData)
     }
 
 }

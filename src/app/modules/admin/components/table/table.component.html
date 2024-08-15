@@ -1,7 +1,8 @@
 <table class="table">
 
-    <head>
+    <thead>
         <tr>
+            <th scope="col">#</th>
             <th scope="col">Imagen</th>
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
@@ -9,7 +10,7 @@
             <th scope="col">Categoría</th>
             <th scope="col">Acciones</th>
         </tr>
-    </head>
+    </thead>
     <tbody>
         <tr *ngFor="let col of coleccionProductos">
             <th scope="row">1</th>
@@ -42,11 +43,12 @@
     Agregar un nuevo producto
 </button>
 
-<!-- Modal -->
+<!-- MODAL PARA  AGREGAR PRODUCTOS-->
 <div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+
                 <!--Titulo del modal-->
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo producto</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -64,10 +66,10 @@
                     <label class="form-label"> Ingrese la categoria del producto </label>
                     <select class="form-control" type="text" formControlName="categoria" class="place-holder">
                         <option selected> Elija una opción</option>
+                        <option value="gel">Geles</option>
                         <option value="gel-color">Gel Color</option>
                         <option value="press-on">Press on</option>
                         <option value="kits">Kits galm</option>
-                        <option value="gel">Geles</option>
                     </select>
                 </div>
 
@@ -80,31 +82,43 @@
                     <label class="form-label"> Ingrese foto del producto </label>
                     <input class="form-control" type="text" formControlName="imagen" placeholder="">
                 </div>
+                <div class="mb-3">
+                    <label class="form-label"> Ingrese ALT</label>
+                    <input class="form-control" type="text" formControlName="alt" placeholder="">
+                </div>
 
                 <!--Acciones del modal-->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregarProducto()">Guardar cambios</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal para eliminar producto -->
 <div class="modal fade" id="eliminarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+
+            <!--ENCABEZADO-->
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
+            <!--CIERRE DEL CUERPO MODAL-->
             <div class="modal-body">
-                ...
+                {{productoSeleccionado.nombre}}
+
+                <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}" style="width: 100px;" >
             </div>
+
+            <!--ACCIONES-->
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="borrarProducto()">Eliminar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>

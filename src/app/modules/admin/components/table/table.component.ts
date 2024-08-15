@@ -56,7 +56,7 @@ export class TableComponent {
           alert("ha ingresado un nuevo producto con exito")
         })
         .catch(error => {
-          alert("ha ocurrido un error al agregar el nuevo producto")
+          alert("ha ocurrido un error al agregar el nuevo producto"+error)
         })
     }
   }
@@ -69,7 +69,7 @@ export class TableComponent {
     this.productoSeleccionado = productoSeleccionado;
   }
 
-  borrarProductos() {
+  borrarProducto() {
     this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
     .then(respuesta=>{
       alert("se ha podido eliminar con éxito")

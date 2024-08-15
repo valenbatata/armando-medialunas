@@ -1,7 +1,4 @@
-/*@font-face {
-  font-family: Lostar;
-  src: url('/src/assets/font/lostar/Lostar.ttf');
-}*/
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Playwrite+DK+Loopet:wght@100..400&family=Rubik+Bubbles&family=Special+Elite&display=swap');
 
 #header{
     width: 100%;
@@ -28,7 +25,12 @@
 
 /* Titulo uno*/
 h2{
-  text-align: center;
+  font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: 30%;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
   
 }
 
