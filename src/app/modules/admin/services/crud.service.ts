@@ -65,7 +65,7 @@ export class CrudService {
     seleccionado y lo actualizamos con el medotodo "update" enviando la nueva información
       
     */
-    editarProducto(idProducto:string, nuevaData:Producto){
+    modificarProducto(idProducto:string, nuevaData:Producto){
       return this.dataBase.collection('producto').doc(idProducto).update(nuevaData)
     }
 

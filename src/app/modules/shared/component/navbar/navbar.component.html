@@ -1,34 +1,27 @@
 <mat-toolbar>
 
-
-  <!--MENU DESPLEGABLE PARA CUANDO LA PANTALLA SEA MENOS A 700PX-->
-  <button mat-icon-button class="example-icon" id="menuSecciones" [matMenuTriggerFor]="seccion">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-   
-
-  <mat-menu #seccion="matMenu">
-    <button  mat-button routerLink="/inicio" > </button>
-   <!--< <button  mat-button [matMenuTriggerFor]="producto">Productos</button>-->
-  </mat-menu>
-
-
-  
-   <!--Se van a mostrar cuando la pantalla sea mayor a 700px-->
+ <!--Se van a mostrar cuando la pantalla sea mayor a 700px-->
   <!--Botón para la vista de inicio-->
   <button id="menuInicio" mat-button routerLink="/inicio"><img src="../../../../../assets/y2k-logo-menu.png" alt="" style="width: 14%;"></button>
 
-
-  <!--MENÚ DE ANGULR DESPLEGABLE--> <!--productos
-  <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
+<div class="secciones">
+  <button   mat-button routerLink="/portafolio" >Portafolio</button>
+  <button   mat-button routerLink="/servicios" >Servicios</button>
+  <button   mat-button routerLink="/blog" >Blog</button>
+  <button   mat-button routerLink="/contacto" >Contacto</button>
+  <button   mat-button routerLink="/admin" >Admin</button>
+  
+  <!--MENÚ DE ANGULR DESPLEGABLE--> <!--productos-->
+  <button  id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
   <mat-menu  #producto="matMenu">
-    <button mat-menu-item routerLink="/producto">General</button>
-    <button mat-menu-item routerLink="/alimentacion">Alimentación</button>
-    <button mat-menu-item routerLink="/juguetes">Juguetes</button>
-    <button mat-menu-item routerLink="/indumentaria">Indumentaria</button>
+    <button mat-menu-item routerLink="/producto">Geles</button>
+    <button mat-menu-item routerLink="/alimentacion">Gel Color</button>
+    <button mat-menu-item routerLink="/juguetes">Press On Nails</button>
+    <button mat-menu-item routerLink="/indumentaria">Kits Glam</button>
   </mat-menu>
--->
+</div>
+    
+
 
 
 
@@ -36,7 +29,7 @@
   <!--BOTONES CON ICONO-->
   <span class="example-spacer"></span>
   <!--Inicio de sesión y registro de nuevo usuario-->
-  <button  mat-button [matMenuTriggerFor]="usuario"><mat-icon style="color: whitesmoke;">person</mat-icon></button>
+  <button  mat-button [matMenuTriggerFor]="usuario"><mat-icon style="color: #C21292;">person</mat-icon></button>
 <mat-menu #usuario="matMenu">
     <button mat-menu-item (click)="inicio()"  *ngIf="logeado" routerLink="/registro">Registrarse</button>
     <button mat-menu-item (click)="inicio()" *ngIf="logeado" routerLink="/inicio-sesion">Iniciar Sesión</button>
@@ -46,7 +39,7 @@
 
   <!--icono-->
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon style="color: whitesmoke;"><span class="material-symbols-outlined">
+    <mat-icon style="color: #C21292;"><span class="material-symbols-outlined">
       shopping_cart
       </span></mat-icon>
   </button>

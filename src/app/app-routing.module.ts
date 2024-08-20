@@ -8,7 +8,6 @@ const routes: Routes = [
   path:"", component:InicioComponent
 },
 
-
   // ruta que nos vincula al módulo de inicio y su contenido
   //loadChildren: Indica que habrá una ruta hija
   //.then:Función asincronica tipo PROMESA 
@@ -25,8 +24,11 @@ const routes: Routes = [
   {
     path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule) 
 
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/secciones/secciones.module').then(m=>m.SeccionesModule)
+ 
   }
-
 
 ];
 

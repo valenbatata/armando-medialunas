@@ -1,112 +1,167 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Playwrite+DK+Loopet:wght@100..400&family=Rubik+Bubbles&family=Special+Elite&display=swap');
 
-#header{
-    width: 100%;
-    height: 28rem;    
+#header {
+  width: 100%;
+  height: 28rem;
 }
 
-.conteiner{
-    height: 100%; /* Asegura que el fondo cubra todo el contenido de la página */
-    margin: 0;
-    padding: 0;
+.conteiner {
+  height: 100%;
+  /* Asegura que el fondo cubra todo el contenido de la página */
+  margin: 0;
+  padding: 0;
 
 
 }
 
-.back1{
-    background-image: url("../../../../../assets/inicio/melanies2.png"); 
-    background-size: cover; /* Asegura que la imagen cubra toda la página */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-   
+.back1 {
+  background-image: url("../../../../../assets/inicio/melanies2.png");
+  background-size: cover;
+  /* Asegura que la imagen cubra toda la página */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+
 }
 
 
+/*BACKGROUND 2 (PARA EL CARRUSSEL)*/
+
+.back2 {
+  background-image: url("/assets/inicio/back2-copia.png");
+
+  background-size: cover;
+  /* Asegura que la imagen cubra toda la página */
+
+  background-position: center;
+  /* Centra la imagen */
+
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+
+  height: 500px;
+  /* Añade una altura fija temporalmente */
+
+  width: 100%;
+  /* Asegura que ocupe todo el ancho */
+
+}
 
 /* Titulo uno*/
-h2{
+#titulo1 {
   font-family: "Kalnia Glaze", serif;
   font-optical-sizing: auto;
-  font-weight: 30%;
+  font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-  
+ width: 50%;
+
+  text-align: center; /* Centrar horizontalmente */
+
+  margin-top: 20px;  /* Margen superior para separar del contenido anterior */
+
+  margin-bottom: 20px; /* Margen inferior para separar del contenido siguiente */
+
+  padding: 10px; /* Espacio interno alrededor del título */
+
+  line-height: 1.2; /* Ajusta la altura de línea para mejorar la legibilidad */
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  height: 12vh;
+  /* Ajusta la altura del contenedor si es necesario */
 }
 
 
-  /*Card*/
-.card-container{
-    display: flex; /* Usa Flexbox para alinear las tarjetas horizontalmente */
-    justify-content: center; /* Centrar horizontalmente las tarjetas */
-    gap: 20px; /* Espacio entre las tarjetas */
-    padding: 20px; /* Padding alrededor del contenedor */
-    
+
+
+
+/*CARDS*/
+
+.card-container {
+  display: flex;
+  /* Usa Flexbox para alinear las tarjetas horizontalmente */
+
+  justify-content: center;
+  /* Centrar horizontalmente las tarjetas */
+
+  gap: 20px;
+  /* Espacio entre las tarjetas */
+
+
+
 }
 
 .card {
-    margin-top: 20%;
-    width: 18rem; /* Tamaño fijo para cada tarjeta */
-    border: 2px solid #6a3ada96; /* Borde ligero para las tarjetas */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px #6a3ada96; /* Sombra ligera para mejorar el diseño */
-  }
-  .card-img-top {
-    width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
-    height: auto; /* Mantener la proporción de la imagen */
- 
-  }
+  margin-top: 20%;
 
-  .card-body {
-    padding: 10px; /* Espacio interno de la tarjeta */
-   
-  }
+  margin-bottom: 20%;
+
+  width: 18rem;
+  /* Tamaño fijo para cada tarjeta */
+
+  border: 2px solid #6a3ada96;
+  /* Borde ligero para las tarjetas */
+
+  border-radius: 8px;
+  /* Bordes redondeados */
+
+  box-shadow: 0 2px 4px #6a3ada96;
+  /* Sombra ligera para mejorar el diseño */
+
+  overflow: hidden;
+  /* Asegura que el contenido adicional se oculte */
+}
+
+.card-img-top {
+  width: 100%;
+  /* Escala la imagen para que llene el ancho del contenedor */
+
+  height: 300px;
+  /* Escala la imagen para que llene la altura del contenedor */
+
+  object-fit: cover;
+  /* Recorta la imagen para que se ajuste al contenedor sin distorsionarse */
+
+  object-position: center;
+  /* Centra la imagen en caso de recorte */
+
+
+}
+
+.card-body {
+  padding: 10px;
+  /* Espacio interno de la tarjeta */
+
+  text-align: center;
+
+}
+
+
 
 /*BOTON DE LAS CARDS*/
-  .btn {
-    padding: 8px 16px; /* Padding del botón */
-    background-color: #6a3ada96; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    border-radius: 8px; /* Bordes redondeados */
-    transition: 0.3s ease; /* Transición suave al pasar el ratón */
-  }
+.btn {
+  padding: 8px 16px;
+  /* Padding del botón */
 
-  .btn:hover {
-    background-color: #ad00b3; /* Cambio de color al pasar el ratón */
-  }
- 
+  background-color: #6a3ada96;
+  /* Color de fondo del botón */
 
+  color: white;
+  /* Color del texto */
 
-  /*BACKGROUND 2 (PARA EL CARRUSSEL)*/
-  .back2{
-    background-image: url("/assets/inicio/back2-copia.png");
-    background-size: cover; /* Asegura que la imagen cubra toda la página */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: 500px; /* Añade una altura fija temporalmente */
-    width: 100%; /* Asegura que ocupe todo el ancho */
+  border-radius: 8px;
+  /* Bordes redondeados */
 
-  }
+  transition: 0.3s ease;
+  /* Transición suave al pasar el ratón */
+}
 
-  /*CARRUSSEL*/
-
-
-/*contenedor principal del carrussel*/
-#carouselInicio{
-    width: 80%; /* Ajusta el ancho del carrusel */
-    margin: 0 auto; /* Centra el carrusel horizontalmente */
-    overflow: hidden; /* Oculta las imágenes fuera del contenedor */
-    padding: 20px; /* Espacio en los bordes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-    border-radius: 10px; /* Bordes redondeados */
-  }
-
-
-/* Estilo para las imágenes */
-.carousel-item img {
-  max-width: 90%; /* La imagen no será más ancha que el 80% del contenedor */
-    max-height: 300px; /* La imagen no será más alta que 300px */
-    object-fit: contain; /* La imagen se mantendrá dentro de estos límites sin distorsionarse */
+.btn:hover {
+  background-color: #ad00b3;
+  /* Cambio de color al pasar el ratón */
 }
 
 
@@ -115,9 +170,39 @@ h2{
 
 
 
- 
 
-  
-  
+/*contenedor principal del carrussel*/
+
+#carouselInicio {
+  width: 80%;
+  /* Ajusta el ancho del carrusel */
+
+  margin: 0 auto;
+  /* Centra el carrusel horizontalmente */
+
+  overflow: hidden;
+  /* Oculta las imágenes fuera del contenedor */
+
+  padding: 20px;
+  /* Espacio en los bordes */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra para darle profundidad */
+
+  border-radius: 10px;
+  /* Bordes redondeados */
+}
 
 
+/* Estilo para las imágenes */
+
+.carousel-item img {
+  max-width: 90%;
+  /* La imagen no será más ancha que el 80% del contenedor */
+
+  max-height: 300px;
+  /* La imagen no será más alta que 300px */
+
+  object-fit: contain;
+  /* La imagen se mantendrá dentro de estos límites sin distorsionarse */
+}

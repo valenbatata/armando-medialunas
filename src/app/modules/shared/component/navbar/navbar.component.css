@@ -35,3 +35,19 @@
         display: none;
     }
 }
+
+/*SECCIONES DEL NAVBAR*/
+.secciones{
+    margin-left: 6%;
+    border-radius: 6px;
+    color: #C21292;
+    animation: brillo 1.5s infinite alternate;
+}
+@keyframes brillo {
+    from {
+        box-shadow: 0 0 10px #C21292 ;
+    }
+    to {
+        box-shadow: 0 0 20px #ca3bdd;
+    }
+}

@@ -5,18 +5,22 @@
 
   <body>
     <div class="back1">
-      <!--Titulo-->
-      <h2>Lo más lindo en azul</h2>
-
-      <!-- CARD 1 -->
-      <div class="card-container">
-        <div class="card" *ngFor="let destacado of destacados" style="width: 18rem;">
-          <img src="{{destacado.img}}" class="card-img-top" alt="">
-          <div class="card-body">
-            <a href="#" class="btn ">Go somewhere</a>
+       <!--Titulo-->
+      <div class="titulo">
+       
+        <h2 id="titulo1">Lo más lindo en azul</h2>
+      </div>
+      
+        <!-- CARD 1 -->
+        <div class="card-container">
+          <div class="card" *ngFor="let destacado of destacados" style="width: 18rem;">
+            <img src="{{destacado.img}}" class="card-img-top" alt="">
+            <div class="card-body">
+              <a href="#" class="btn ">Ver Producto</a>
+            </div>
           </div>
         </div>
-      </div>
+      
     </div>
 
     <!--Carrussel de imgs-->

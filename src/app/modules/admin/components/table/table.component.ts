@@ -54,9 +54,12 @@ export class TableComponent {
       await this.servicioCrud.crearProducto(nuevoProducto)
         .then(producto => {
           alert("ha ingresado un nuevo producto con exito")
+          //resetea el formulario y las casillas quedan vacías
+          this.producto.reset();
         })
         .catch(error => {
           alert("ha ocurrido un error al agregar el nuevo producto"+error)
+          this.producto.reset();
         })
     }
   }
@@ -77,6 +80,48 @@ export class TableComponent {
     .catch(error => {
       alert("Ha ocurrido un error al eliminar el producto"+error)
     })      
+    }
+
+    /*
+    Toma los valores del producto seleccionado y 
+    los va a autocompletar en el formulario del modal (menos el ID) */
+
+    mostrarEditar(productoSeleccionado:Producto){
+      this.productoSeleccionado=productoSeleccionado
+      this.producto.setValue({
+        nombre:productoSeleccionado.nombre,
+        precio:productoSeleccionado.precio,
+        descripcion:productoSeleccionado.descripcion,
+        categoria:productoSeleccionado.categoria,
+        imagen:productoSeleccionado.imagen,
+        alt:productoSeleccionado.alt
+      })
+    }
+    //VINCULA AL BOTÓN "editarProducto" DEL MODAL DE EDITAR
+    editarProducto(){
+      let datos:Producto={
+
+        //SOLO idProducto PORQUE SE MODIFICA POR EL USUARIO
+        idProducto:this.productoSeleccionado.idProducto,
+        nombre:this.producto.value.nombre!,
+        precio:this.producto.value.precio!,
+        descripcion:this.producto.value.descripcion!,
+        categoria: this.producto.value.categoria!,
+        imagen: this.producto.value.imagen!,
+        alt: this.producto.value.alt!
+
+      }
+
+      this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto,datos)
+
+      .then(producto=>{
+        alert("El producto se ha modificado con éxito")
+        this.producto.reset();
+      })
+      .catch(error=>{
+        alert("hubo un error al modificar el producto:\n"+error)
+        this.producto.reset();
+      })
     }
   }
 
