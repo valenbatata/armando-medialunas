@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //importación de componentes globales
-import { FooterComponent } from './component/footer/footer.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
@@ -18,7 +17,6 @@ import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
-    FooterComponent,
     NavbarComponent
   ],
   
@@ -32,7 +30,7 @@ import {MatMenuModule} from '@angular/material/menu';
   ],
 
   exports:[
-    FooterComponent,
+  
     NavbarComponent,
     MatIconModule,
     MatButtonModule,

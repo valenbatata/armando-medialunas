@@ -16,7 +16,7 @@ const routes: Routes = [
 
   },
   {
-    path:"",loadChildren:()=>import('./modules/producto/producto.module').then(m=>m.ProductoModule) 
+    path:"",loadChildren:()=>import('./modules/secciones/secciones.module').then(m=>m.SeccionesModule) 
   },
   {
     path:"",loadChildren:()=>import('./modules/autentificacion/autentificacion.module').then(m=>m.AutentificacionModule) 
@@ -25,10 +25,9 @@ const routes: Routes = [
     path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule) 
 
   },
-  {
-    path:"",loadChildren:()=>import('./modules/secciones/secciones.module').then(m=>m.SeccionesModule)
  
-  }
+ 
+ 
 
 ];
 
