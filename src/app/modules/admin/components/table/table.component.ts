@@ -18,7 +18,7 @@ export class TableComponent {
 
   //definimos formulario para los prductos 
   /*
-  Los atrivutos alfa numericos (string) se inicializan con comillas simples
+  Los atrivutos alfa-numericos (string) se inicializan con comillas simples
   Atributos numericos (number) se inicializan con cero (0) */
   producto = new FormGroup({
     nombre: new FormControl('', Validators.required),

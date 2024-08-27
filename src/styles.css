@@ -3,3 +3,23 @@
 html, body { height: 100%; background-color: #C1B098; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+/* Estilos para modo oscuro */
+
+body{
+    transition: all 1.5s ease;
+}
+
+#toggle{
+    display: none;
+}
+
+#label_toggle{
+position: static;
+cursor: pointer;
+}
+
+.dark{
+    background-color: black;
+    color: white;
+    transition: all 1.5s ease;
+}

@@ -8,15 +8,30 @@ import { CrudService } from 'src/app/modules/admin/services/crud.service';
 })
 export class CardBlogComponent {
 
+  //colección de todos los productos de forma local
   coleccionProductos: Producto[] = []
+
+  //coleccion de productos de una sola categoria
   coleccionBlog: Producto[] = []
+
+  //variable para seleccionar productos especificos 
   productoSeleccionado!: Producto
+
+  //variable para manejar el estado del modal
   modalVisible: boolean = false
+
+  //patentamos de forma local el servicio para acceder en el 
   constructor(public servicioCrud: CrudService) { }
 
+  //inicializa al momento que renderiza el componente
   ngOnInit(): void {
+    //accedemos al metodo de "obtenerProducto" y nos suscribimos a los cambios
+    //recibimos notificacion ante modificaciones
     this.servicioCrud.obtenerProductos().subscribe(producto => {
       this.coleccionProductos = producto
+
+      //mostrará la colección de esa categoria hasta el momento
+      this.mostrarProductoBlog()
     })
   }
   mostrarProductoBlog() {
