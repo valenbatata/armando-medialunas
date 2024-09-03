@@ -1,15 +1,27 @@
-<div class="contenido" *ngFor="let producto of coleccionProductos">
+<!-- Espacio para mostrar la información del Input -->
+<div class="row">
+  <div class="col-lg-12" *ngIf="comprarVisible"> <!--EVITA QUE CHOQUE CON LAS CARDS-->
+    <div class="col-lg-4">
+      <div class="card text-bg-info mb-3">
+        <ul class="list-group">
+            <h3>Ultima Compra</h3>
+            <li class="list-group-item">
+              {{productoReciente}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="contenido" *ngFor="let producto of coleccionProductos">
     <div class="card" style="width: 18rem;">
         <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
-
         <div class="card-body">
             <h5 class="card-title">{{producto.nombre}}</h5>
             <p class="card-text">{{producto.precio}}</p>
-
             <button type="button" class="btn btn-outline-primary" data-bas-toggle="modal" data-bs-target="#verMas">
                 Ver Más </button>
-
         </div>
     </div>
 
@@ -35,7 +47,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Agregar al carrito</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="agregarProducto(productoSeleccionado)">Agregar</button>
           <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>

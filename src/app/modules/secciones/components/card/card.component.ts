@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
 @Component({
@@ -14,14 +14,19 @@ coleccionProductos:Producto[]=[]
 productoSeleccionado!:Producto
 
 //Variable local para manejar estado de un modal
-modalVisible:boolean=false
+modalVisible:boolean=false;
 
+comprarVisible:boolean=false;
 
 constructor(public servicioCrud:CrudService){
   this.servicioCrud.obtenerProductos().subscribe(producto=>{
     this.coleccionProductos=producto
   })
 }
+
+//Directivas para comunicarse con el componente padre
+@Input() productoReciente: string='';
+@Output() productoAgregado = new EventEmitter <Producto>(); //@Output será definido como un nuevo evento
 
 ngOnInit():void{
   this.servicioCrud.obtenerProductos().subscribe(producto=>{
@@ -39,4 +44,13 @@ mostrarVer(info:Producto){
   //Guardo en variable seleccionando la informacion del producto elegido
   this.productoSeleccionado=info
 }
+
+agregarProducto(info : Producto){
+this.productoAgregado.emit(info); //Llamamos al output y emitimos (agregamos) la info del producto agregado
+this.comprarVisible=true;
+
+}
+
+
+
 }

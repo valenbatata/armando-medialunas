@@ -23,7 +23,9 @@ import { ProductoComponent } from './producto/producto.component';
   ],
   imports: [
     CommonModule,
-    SeccionesRoutingModule
+    SeccionesRoutingModule,
+    
+
   ],
 
 })

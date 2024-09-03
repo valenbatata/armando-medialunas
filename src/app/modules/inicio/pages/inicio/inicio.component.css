@@ -5,14 +5,7 @@
   height: 28rem;
 }
 
-.conteiner {
-  height: 100%;
-  /* Asegura que el fondo cubra todo el contenido de la página */
-  margin: 0;
-  padding: 0;
 
-
-}
 
 .back1 {
   background-image: url("../../../../../assets/inicio/melanies2.png");
@@ -22,30 +15,7 @@
   /* Centra la imagen */
   background-repeat: no-repeat;
   /* Evita que la imagen se repita */
-
-}
-
-
-/*BACKGROUND 2 (PARA EL CARRUSSEL)*/
-
-.back2 {
-  background-image: url("/assets/inicio/back2-copia.png");
-
-  background-size: cover;
-  /* Asegura que la imagen cubra toda la página */
-
-  background-position: center;
-  /* Centra la imagen */
-
-  background-repeat: no-repeat;
-  /* Evita que la imagen se repita */
-
-  height: 500px;
-  /* Añade una altura fija temporalmente */
-
-  width: 100%;
-  /* Asegura que ocupe todo el ancho */
-
+height:100%;
 }
 
 /* Titulo uno*/
@@ -76,99 +46,104 @@
 
 
 
-
-
 /*CARDS*/
 
-.card-container {
-  display: flex;
-  /* Usa Flexbox para alinear las tarjetas horizontalmente */
-
-  justify-content: center;
-  /* Centrar horizontalmente las tarjetas */
-
-  gap: 20px;
-  /* Espacio entre las tarjetas */
-
-
-
-}
-
 .card {
-  margin-top: 20%;
+  width: 190px;
+  height: 254px;
+  padding: .8em;
+  background: #f5f5f5;
+  position: relative;
+  overflow: visible; 
+ }
 
-  margin-bottom: 20%;
 
-  width: 18rem;
-  /* Tamaño fijo para cada tarjeta */
-
-  border: 2px solid #6a3ada96;
-  /* Borde ligero para las tarjetas */
-
-  border-radius: 8px;
-  /* Bordes redondeados */
-
-  box-shadow: 0 2px 4px #6a3ada96;
-  /* Sombra ligera para mejorar el diseño */
-
-  overflow: hidden;
-  /* Asegura que el contenido adicional se oculte */
-}
-
-.card-img-top {
+ 
+ .card-img {
   width: 100%;
-  /* Escala la imagen para que llene el ancho del contenedor */
-
   height: 300px;
-  /* Escala la imagen para que llene la altura del contenedor */
+  object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor sin distorsionarse */
+  object-position: center; /* Centra la imagen en caso de recorte */
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+ 
+ .card-body {
+  padding-top: 10%;
+ }
+ 
+ svg {
+  width: 20px;
+  height: 20px;
+ }
+ 
+ .card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+ }
+ 
+ /*Text*/
+ .text-title {
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 1.5;
+ }
+ 
+ .text-body {
+  font-size: .9em;
+  padding-bottom: 10px;
+ }
+ 
+ /*Button*/
+ .card-button {
+  border: 1px solid #252525;
+  display: flex;
+  padding: .3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: .3s ease-in-out;
+ }
+ 
+ /*Hover*/
+ .card-img:hover {
+  transform: translateY(-25%);
+  box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+ }
+ 
+ .card-button:hover {
+  border: 1px solid #ffcaa6;
+  background-color: #ffcaa6;
+ }
+ 
 
-  object-fit: cover;
-  /* Recorta la imagen para que se ajuste al contenedor sin distorsionarse */
 
-  object-position: center;
-  /* Centra la imagen en caso de recorte */
 
+
+/*BACKGROUND 2 (PARA EL CARRUSSEL)*/
+
+.back2 {
+  background-image: url("/assets/inicio/back2-copia.png");
+
+  background-size: cover;
+  /* Asegura que la imagen cubra toda la página */
+
+  background-position: center;
+  /* Centra la imagen */
+
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+
+  height: 500px;
+  /* Añade una altura fija temporalmente */
+
+  width: 100%;
+  /* Asegura que ocupe todo el ancho */
 
 }
-
-.card-body {
-  padding: 10px;
-  /* Espacio interno de la tarjeta */
-
-  text-align: center;
-
-}
-
-
-
-/*BOTON DE LAS CARDS*/
-.btn {
-  padding: 8px 16px;
-  /* Padding del botón */
-
-  background-color: #6a3ada96;
-  /* Color de fondo del botón */
-
-  color: white;
-  /* Color del texto */
-
-  border-radius: 8px;
-  /* Bordes redondeados */
-
-  transition: 0.3s ease;
-  /* Transición suave al pasar el ratón */
-}
-
-.btn:hover {
-  background-color: #ad00b3;
-  /* Cambio de color al pasar el ratón */
-}
-
-
-
-
-
-
 
 
 /*contenedor principal del carrussel*/
