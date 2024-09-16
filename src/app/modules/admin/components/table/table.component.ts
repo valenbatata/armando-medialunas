@@ -12,8 +12,14 @@ import { Validators } from '@angular/forms';
 export class TableComponent {
   //Creamos coleccion local de producto -> la definimos como array
   coleccionProductos: Producto[] = []
+
   productoSeleccionado!: Producto; // ! <- toma valores vacios
+
   modalVisibleProducto: boolean = false;
+
+  nombreImagen!:string; //Obtendrá el nombre de la imagen
+
+  imagen!: string //Obrentendrá la ruta de la imagen
 
 
   //definimos formulario para los prductos 
@@ -25,7 +31,7 @@ export class TableComponent {
     precio: new FormControl(0, Validators.required),
     descripcion: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
-    imagen: new FormControl('', Validators.required),
+  
     alt: new FormControl('', Validators.required)
   })
 
@@ -44,23 +50,66 @@ export class TableComponent {
         idProducto: '',
         nombre: this.producto.value.nombre!,
         precio: this.producto.value.precio!,
-        imagen: this.producto.value.imagen!,
+        imagen:'',
         alt: this.producto.value.alt!,
         descripcion: this.producto.value.descripcion!,
         categoria: this.producto.value.categoria!
-
-
       }
-      await this.servicioCrud.crearProducto(nuevoProducto)
+
+      // Enviamos nombre y URL de la imagen, definimos carpeta de la imagenes como "producto"
+      await this.servicioCrud.subirImagen(this.nombreImagen, this.imagen, "producto")
+      .then(resp => {
+        //encapsulamos la respuesta y enviamos la información obtenida
+        this.servicioCrud.obtenerUrlImagen(resp)
+
+        .then(url => {
+          this.servicioCrud.crearProducto(nuevoProducto, url)
+          // Ahora método crearProducto recibe datos del formulario y URL creada
         .then(producto => {
+
           alert("ha ingresado un nuevo producto con exito")
+
           //resetea el formulario y las casillas quedan vacías
           this.producto.reset();
+
         })
         .catch(error => {
+
           alert("ha ocurrido un error al agregar el nuevo producto"+error)
+          
           this.producto.reset();
         })
+        })
+      })
+    }
+  }
+
+  cargarImagenes(event: any){
+    // Variable para obtener el articulo subido donde el input del HTML
+    let archivo = event.target.files(0);
+
+    // Variable para crear un nuevo objeto de tipo "archivo" o "file" y leerlo
+    let reader = new FileReader();
+
+    if(archivo!= undefined){
+
+      /*Llamamos a método readAsDataUrl para leer toda la información recibida"
+      Envíamos como párametro al "archivo" porque será el encargado de tener la 
+      info ingresada por el usuario
+      */
+      reader.readAsDataURL(archivo);
+
+      // Definimos que haremos con la informacion mediante la funcion flecha
+      reader.onloadend=()=>{}
+
+      let url=reader.result
+
+      if (url!= null) {
+        // Definimos nombre de la imagen con atributo "name" del input
+        this.nombreImagen = archivo.name
+        // Definimos ruta de la imagen según url recibida
+        this.imagen = url.toString()
+      }
     }
   }
 

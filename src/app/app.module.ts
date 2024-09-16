@@ -18,10 +18,12 @@ import{ AngularFireAuthModule } from '@angular/fire/compat/auth'; //Trabaja con 
 import{ AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { FooterComponent } from './modules/shared/component/footer/footer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
