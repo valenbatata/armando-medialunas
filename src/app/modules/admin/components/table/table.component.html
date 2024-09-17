@@ -57,11 +57,11 @@
             <div [formGroup]="producto" class="modal-body">
                 <div class="mb-3">
                     <label class="form-label"> Ingrese el nombre del producto</label>
-                    <input class="form-control" type="text" formControlName="nombre" placeholder="ej:top coat">
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="ej: top coat">
                 </div>
                 <div class="mb-3">
                     <label class="form-label"> Ingrese el precio del producto</label>
-                    <input class="form-control" type="number" formControlName="precio" placeholder="ej:$15.000">
+                    <input class="form-control" type="number" formControlName="precio" placeholder="ej: $15.000">
                 </div>
                 <div class="mb-3">
                     <label class="form-label"> Ingrese la categoria del producto </label>
@@ -81,8 +81,17 @@
 
                 <div class="mb-3">
                     <label class="form-label"> Ingrese foto del producto </label>
-                    <input class="form-control" type="text" formControlName="imagen" placeholder="">
+                    <!--
+                    type="archivo"
+
+                    accept="imagen/*" <- acepta todo tipo de extensiones (jpg, jpeg, png, gif)
+                    
+                    (change)="cargarImagenes($event)" <- ejecuta el evento de cargarImagen que
+                    definimos en table.ts
+                    -->
+                    <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
                 </div>
+
                 <div class="mb-3">
                     <label class="form-label"> Ingrese ALT</label>
                     <input class="form-control" type="text" formControlName="alt" placeholder="">
@@ -140,7 +149,7 @@
 
                 <div class="mb-3">
                     <label class="form-label"> Ingrese foto del producto </label>
-                    <input class="form-control" type="text" formControlName="imagen" placeholder=" {{productoEdit.imagen}}">
+                    <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
                 </div>
                 <div class="mb-3">
                     <label class="form-label"> Ingrese ALT</label>
