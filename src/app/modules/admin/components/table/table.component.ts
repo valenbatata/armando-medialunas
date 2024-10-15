@@ -86,7 +86,7 @@ export class TableComponent {
 
   cargarImagen(event: any){
     // Variable para obtener el articulo subido donde el input del HTML
-    let archivo = event.target.files(0);
+    let archivo = event.target.files[0];
 
     // Variable para crear un nuevo objeto de tipo "archivo" o "file" y leerlo
     let reader = new FileReader();

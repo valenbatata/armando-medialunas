@@ -38,9 +38,12 @@ export class CrudService {
   //Crea nuevos productos -> obtiene datos del formulario y URL de la imagen
   crearProducto(producto: Producto, url: string) {
     return new Promise(async (resolve, reject) => {
+
       try {
+
         //Creamos un número identificativo para el producto en la base de datos
         const idProducto = this.dataBase.createId()
+        
         //Asignamos ID creado al atributo idProducto de la interfaz Producto
         producto.idProducto = idProducto;
 
@@ -49,11 +52,11 @@ export class CrudService {
 
         const resultado = await this.productoCollection.doc(idProducto).set(producto)
         resolve(resultado)
-      } catch (error) { reject(error) }
+      } 
+      catch (error) { reject(error) }
 
     })
   }
-
 
   /*
   
@@ -64,6 +67,7 @@ export class CrudService {
    A => resguarda la nueva información y la envia como un nuevo documento 
 
    */
+  
   obtenerProductos() {
     return this.productoCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
   }

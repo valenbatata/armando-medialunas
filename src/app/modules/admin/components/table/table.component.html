@@ -169,7 +169,8 @@
 
 
 <!-- Modal para eliminar producto -->
-<div class="modal fade" id="eliminarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="eliminarProducto" *ngIf="modalVisibleProducto" tabindex="-1" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 

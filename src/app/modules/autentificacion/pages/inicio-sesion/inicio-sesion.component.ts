@@ -94,7 +94,23 @@ export class InicioSesionComponent {
             icon: "success"
           });
 
-          this.ServicioRutas.navigate(['/inicio']);
+          this.ServicioAuth.setUserRol(usuarioData.rol)
+
+          if (usuarioData.rol==="admin") {
+
+            console.log("inicio de administrador")
+            //Si es admin, redirecciona a la vista "admin"
+            this.ServicioRutas.navigate(['/admin'])
+
+          } else{
+
+            console.log("inicio de visitante")
+            //Si es otro tipo de usuario, redirecciona al "inicio"
+            this.ServicioRutas.navigate(['/inicio']);
+
+          }
+
+          
         })
 
         .catch(err => {
@@ -106,6 +122,7 @@ export class InicioSesionComponent {
 
           this.limpiarInputs();
         })
+
 
 
 
